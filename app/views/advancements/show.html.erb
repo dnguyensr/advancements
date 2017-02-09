@@ -1,0 +1,15 @@
+<div class="container">
+
+  <p id="notice"><%= notice %></p>
+  <div class="row">
+    <div class="col-xs-3">
+      <%= @advancement.user.name %>'s Advancements
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">
+      <%= link_to 'Edit', edit_advancement_path(@advancement) %> |
+      <%= link_to 'Back', advancements_path %>
+    </div>
+  </div>
+</div>
