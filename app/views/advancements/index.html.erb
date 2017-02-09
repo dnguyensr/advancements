@@ -1,28 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Advancements</h1>
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <h1>Advancements</h1>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @advancements.each do |advancement| %>
-      <tr>
-        <td><%= advancement.user_id %></td>
-        <td><%= link_to 'Show', advancement %></td>
-        <td><%= link_to 'Edit', edit_advancement_path(advancement) %></td>
-        <td><%= link_to 'Destroy', advancement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @advancements.each do |advancement| %>
+        <tr>
+          <td><%= advancement.user.name %></td>
+          <td><%= link_to 'Show', advancement %></td>
+          <td><%= link_to 'Edit', edit_advancement_path(advancement) %></td>
+          <td><%= link_to 'Destroy', advancement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
-<br>
+  <br>
 
-<%= link_to 'New Advancement', new_advancement_path %>
+  <%= link_to 'New Advancement', new_advancement_path, class: "btn btn-success" %>
+
+</div>

@@ -4,4 +4,8 @@ class User < ApplicationRecord
   has_one :advancement
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def name
+    first_name + " " + last_name.slice(0)
+  end
 end
