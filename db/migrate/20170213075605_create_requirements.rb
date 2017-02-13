@@ -4,7 +4,7 @@ class CreateRequirements < ActiveRecord::Migration[5.0]
       t.integer :number
       t.text :description
       t.date :completed
-      t.integer :ranks_id
+      t.integer :rank_id
 
       t.timestamps
     end

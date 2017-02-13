@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20170213075825) do
     t.integer  "number"
     t.text     "description"
     t.date     "completed"
-    t.integer  "ranks_id"
+    t.integer  "rank_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
