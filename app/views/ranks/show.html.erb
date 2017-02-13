@@ -34,6 +34,13 @@
             <td><%= requirement.description %></td>
             <td><%= requirement.completed %></td>
           </tr>
+            <% requirement.subrequirements.each do |subrequirement| %>
+              <tr>
+                <td><%= subrequirement.part %></td>
+                <td><%= subrequirement.description %></td>
+                <td></td>
+              </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>
