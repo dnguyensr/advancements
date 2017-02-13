@@ -10,6 +10,7 @@ class RanksController < ApplicationController
   # GET /ranks/1
   # GET /ranks/1.json
   def show
+    @advancement = Advancement.find(params[:advancement_id])
   end
 
   # GET /ranks/new
