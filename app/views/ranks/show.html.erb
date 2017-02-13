@@ -36,7 +36,7 @@
           </tr>
             <% requirement.subrequirements.each do |subrequirement| %>
               <tr>
-                <td><%= subrequirement.part %></td>
+                <td><%= requirement.number %><%= subrequirement.part %>.</td>
                 <td><%= subrequirement.description %></td>
                 <td></td>
               </tr>
