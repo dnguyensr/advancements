@@ -1,19 +1,57 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <p id="notice"><%= notice %></p>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h3><%= @advancement.user.name %>'s Advancements</h3>
+    </div>
+  </div>
+  <hr>
+  <div class="row pad-b-10">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <% @advancement.ranks.each do |rank| %>
+        <li><%= link_to rank.rank, advancement_rank_path(@advancement, rank) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="row pad-b-10">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Requirement</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @rank.requirements.each do |requirement| %>
+          <tr>
+            <td><%= requirement.number %></td>
+            <td><%= requirement.description %></td>
+            <td><%= requirement.completed %></td>
+          </tr>
+            <% requirement.subrequirements.each do |subrequirement| %>
+              <tr>
+                <td><%= subrequirement.part %></td>
+                <td><%= subrequirement.description %></td>
+                <td></td>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-<p>
-  <strong>Rank:</strong>
-  <%= @rank.rank %>
-</p>
-
-<p>
-  <strong>Completed:</strong>
-  <%= @rank.completed %>
-</p>
-
-<p>
-  <strong>Advancement:</strong>
-  <%= @rank.advancement_id %>
-</p>
-
-<%= link_to 'Edit', edit_rank_path(@rank) %> |
-<%= link_to 'Back', ranks_path %>
+  <hr>
+  <div class="row pad-b-20">
+    <div class="col-xs-6">
+      <div><%= link_to 'Edit Ranks', edit_advancement_rank_path(@advancement) %></div>
+      <div><%= link_to 'Back to Homepage', root_path %></div>
+    </div>
+  </div>
+</div>

@@ -12,7 +12,7 @@
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
        <ul class="nav nav-tabs">
          <% @advancement.ranks.each do |rank| %>
-         <li><%= link_to rank.rank, rank_path(rank.id) %></li>
+         <li><%= link_to rank.rank, advancement_rank_path(@advancement, rank) %></li>
          <% end %>
        </ul>
      </div>
