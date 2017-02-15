@@ -106,10 +106,9 @@ Subrequirement.create(requirement_id: req8.id, part: "e", description: "Particip
 req9 = Requirement.create(rank_id: secondclass.id, number: 9, description: "Complete all subrequirements for 9")
 Subrequirement.create(requirement_id: req9.id, part: "a", description: "Explain the three R’s of personal safety and protection.")
 Subrequirement.create(requirement_id: req9.id, part: "b", description: "Describe bullying; tell what the appropriate response is to someone who is bullying you or another person.")
-req9 = Requirement.create(rank_id: secondclass.id, number: 9, description: "Complete all subrequirements for 9")
-Requirement.create(rank_id: secondclass.id, number: 1, description: "Demonstrate Scout spirit by living the Scout Oath and Scout Law. Tell how you have done your duty to God and how you have lived four different points of the Scout Law (not to include those used for Tenderfoot requirement 9) in your everyday life.")
-Requirement.create(rank_id: secondclass.id, number: 1, description: "While working toward the Second Class rank, and after completing Tenderfoot requirement 10, participate in a Scoutmaster conference.")
-Requirement.create(rank_id: secondclass.id, number: 1, description: "Successfully complete your board of review for the Second Class rank.")
+Requirement.create(rank_id: secondclass.id, number: 10, description: "Demonstrate Scout spirit by living the Scout Oath and Scout Law. Tell how you have done your duty to God and how you have lived four different points of the Scout Law (not to include those used for Tenderfoot requirement 9) in your everyday life.")
+Requirement.create(rank_id: secondclass.id, number: 11, description: "While working toward the Second Class rank, and after completing Tenderfoot requirement 10, participate in a Scoutmaster conference.")
+Requirement.create(rank_id: secondclass.id, number: 12, description: "Successfully complete your board of review for the Second Class rank.")
 
 firstclass = Rank.create(rank: "First Class", advancement_id: scout.advancement.id)
 req1 = Requirement.create(number: 1, rank_id: firstclass.id, description: "Complete all subrequirements for 1")
@@ -161,7 +160,7 @@ Requirement.create(number: 12, rank_id: firstclass.id, description: "While worki
 Requirement.create(number: 13, rank_id: firstclass.id, description: "Successfully complete your board of review for the First Class rank.")
 
 # Star rank requirements
-star = Rank.create(rank: "Life", advancement_id: scout.advancement.id)
+star = Rank.create(rank: "Star", advancement_id: scout.advancement.id)
 Requirement.create( number: 1, rank_id: star.id, description: "Be active in your troop for at least four months as a First Class Scout.")
 Requirement.create( number: 2, rank_id: star.id, description: "As a First Class Scout, demonstrate Scout spirit by living the Scout Oath and Scout Law. Tell how you have done your duty to God and how you have lived the Scout Oath and Scout Law in your everyday life.")
 Requirement.create( number: 3, rank_id: star.id, description: "Earn six merit badges, including any four from the required list for Eagle. You may choose any of the 17 merit badges on the required list for Eagle to fulfill this requirement.")
@@ -173,7 +172,7 @@ Requirement.create( number: 8, rank_id: star.id, description: "Successfully comp
 
 
 # Life rank requirements
-life = Rank.create(rank: "Star", advancement_id: scout.advancement.id)
+life = Rank.create(rank: "Life", advancement_id: scout.advancement.id)
 Requirement.create(number: 1, rank_id: life.id, description: "Be active in your troop for at least six months as a Star Scout")
 Requirement.create(number: 2, rank_id: life.id, description: "As a Star Scout, demonstrate Scout spirit by living the Scout Oath and Scout Law. Tell how you have done your duty to God and how you have lived the Scout Oath and Scout Law in your everyday life")
 Requirement.create(number: 3, rank_id: life.id, description: "Earn five more merit badges (so that you have 11 in all), including any three additional badges from the required list for Eagle")
