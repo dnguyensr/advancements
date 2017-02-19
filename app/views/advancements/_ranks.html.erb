@@ -1,0 +1,23 @@
+<thead>
+  <tr>
+    <th>#</th>
+    <th>Requirement</th>
+    <th>Date</th>
+  </tr>
+</thead>
+<tbody>
+  <% @rank.requirements.each do |requirement| %>
+  <tr>
+    <td><%= requirement.number %></td>
+    <td><%= requirement.description %></td>
+    <td><%= requirement.completed %></td>
+  </tr>
+    <% requirement.subrequirements.each do |subrequirement| %>
+      <tr>
+        <td><%= requirement.number %><%= subrequirement.part %>.</td>
+        <td><%= subrequirement.description %></td>
+        <td></td>
+      </tr>
+    <% end %>
+  <% end %>
+</tbody>

@@ -27,7 +27,7 @@
   </div>
 
   <br>
-  <% if user_signed_in? %>
+  <% if user_signed_in?%>
   <%= link_to 'Create Direct Advancement', advancements_path(@user), method: :post, class: "btn btn-success create-advancement" %>
   <%= link_to 'Create Advancement', new_advancement_path, class: "btn btn-success" %>
   <% end %>
