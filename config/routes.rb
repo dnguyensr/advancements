@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   resources :advancements do
     resources :ranks do
-      resources :requirements do
-        resources :subrequirements
-      end
+      resources :requirements
     end
   end
   # get 'users' => 'users#index'
