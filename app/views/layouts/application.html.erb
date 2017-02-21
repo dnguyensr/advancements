@@ -17,19 +17,23 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <ul class="nav navbar-nav">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Advancements", advancements_path %></li>
-        </ul>
-        <ul class="nav navbar-nav pull-right">
-          <% if user_signed_in? %>
-          <li><a>Signed in as <%= current_user.name %></a></li>
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-          <li><%= link_to "Register", new_user_registration_path %></li>
-          <li><%= link_to "Login", new_user_session_path %></li>
-          <% end %>
-        </ul>
+        <div class="col-xs-6">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Advancements", advancements_path %></li>
+          </ul>
+        </div>
+        <div class="col-xs-6">
+          <ul class="nav navbar-nav pull-right">
+            <% if user_signed_in? %>
+            <li><a>Signed in as <%= current_user.name %></a></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li><%= link_to "Register", new_user_registration_path %></li>
+            <li><%= link_to "Login", new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="container-fluid">
