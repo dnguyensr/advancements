@@ -1,28 +1,22 @@
 class RequirementsController < ApplicationController
   before_action :set_requirement, only: [:show, :edit, :update, :destroy]
 
-  # GET /requirements
-  # GET /requirements.json
   def index
     @requirements = Requirement.all
   end
 
-  # GET /requirements/1
-  # GET /requirements/1.json
   def show
   end
 
-  # GET /requirements/new
   def new
     @requirement = Requirement.new
   end
 
-  # GET /requirements/1/edit
   def edit
+    @advancement = Advancement.find(params[:advancement_id])
+    @rank = Rank.find(params[:rank_id])
   end
 
-  # POST /requirements
-  # POST /requirements.json
   def create
     @requirement = Requirement.new(requirement_params)
 
@@ -37,12 +31,11 @@ class RequirementsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /requirements/1
-  # PATCH/PUT /requirements/1.json
   def update
+    @advancement = Advancement.find(params[:advancement_id])
     respond_to do |format|
       if @requirement.update(requirement_params)
-        format.html { redirect_to @requirement, notice: 'Requirement was successfully updated.' }
+        format.html { redirect_to advancement_path(@advancement), notice: 'Requirement was successfully updated.' }
         format.json { render :show, status: :ok, location: @requirement }
       else
         format.html { render :edit }
@@ -51,8 +44,6 @@ class RequirementsController < ApplicationController
     end
   end
 
-  # DELETE /requirements/1
-  # DELETE /requirements/1.json
   def destroy
     @requirement.destroy
     respond_to do |format|
@@ -62,13 +53,12 @@ class RequirementsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_requirement
       @requirement = Requirement.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def requirement_params
-      params.require(:requirement).permit(:number, :description, :completed, :rank_id)
+      params.require(:requirement).permit(:completed)
+      # params.require(:requirement).permit(:number, :description, :completed, :rank_id)
     end
 end
