@@ -1,1 +1,1 @@
-# advancements
+# advancements [![Build Status](https://travis-ci.org/dnguyensr/advancements.svg?branch=master)](https://travis-ci.org/dnguyensr/advancements) [![Coverage Status](https://coveralls.io/repos/github/dnguyensr/advancements/badge.svg?branch=add-travis-coveralls)](https://coveralls.io/github/dnguyensr/advancements?branch=add-travis-coveralls)
