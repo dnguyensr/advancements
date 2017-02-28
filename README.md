@@ -21,7 +21,8 @@ Additional resources for adult leaders will be added, such as example activities
         - [ ] History
         - [ ] Current
         - [ ] Automate to fulfill time requirements for ranks
-- Senior Patrol Leader Council views
+
+- [ ] Senior Patrol Leader Council views
   - [ ] Troop Overview
   - [ ] Patrol Overview
   - [ ] Scout Overview
@@ -33,6 +34,6 @@ Additional resources for adult leaders will be added, such as example activities
   - [ ] Patrol Overview
   - [ ] Scout Overview
 
-- Advancements
+- [ ] Advancements
   - [ ] Add and/or approve Scouts
   - [ ] Add and/or approve adult leaders
