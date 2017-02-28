@@ -11,13 +11,14 @@ class RanksController < ApplicationController
   # GET /ranks/1.json
   def show
     @advancement = Advancement.find(params[:advancement_id])
-    if request.xhr?
+    respond_to do |format|
       partial = view_context.render partial: "advancements/ranks", layout: false
-
-      render json: {
-        html: partial
+      format.json {
+        render json: {
+          html: partial
+        }
       }
-    else
+      format.html {}
     end
   end
 
