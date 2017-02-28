@@ -3,19 +3,22 @@
     <th>#</th>
     <th>Requirement</th>
     <th>Status</th>
+    <th>Date</th>
   </tr>
 </thead>
 <tbody>
   <% @rank.requirements.each do |requirement| %>
-  <tr>
+  <tr id='req-<%= requirement.number %>-show' >
     <td><%= requirement.number %></td>
     <td><%= requirement.description %></td>
     <% if requirement.completed == nil %>
-    <td class="text-center"><%= link_to '<span class="glyphicon glyphicon-unchecked"></span>'.html_safe, edit_advancement_rank_requirement_path(@advancement, @rank, requirement) %></td>
+    <td class="text-center"><%= link_to '<span class="glyphicon glyphicon-unchecked"></span>'.html_safe, edit_advancement_rank_requirement_path(@advancement, @rank, requirement), class: "update-requirement" %></td>
     <% else %>
     <td class="text-center"><span class="glyphicon glyphicon-ok-circle"></span></td>
+    <td><%= requirement.completed.strftime("%m/%d/%y")  %></td>
     <% end %>
   </tr>
+  <tr id='req-<%= requirement.number %>-edit', class="hidden"></tr>
     <% requirement.subrequirements.each do |subrequirement| %>
       <tr>
         <td><%= requirement.number %><%= subrequirement.part %>.</td>

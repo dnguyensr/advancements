@@ -15,6 +15,15 @@ class RequirementsController < ApplicationController
   def edit
     @advancement = Advancement.find(params[:advancement_id])
     @rank = Rank.find(params[:rank_id])
+
+    if request.xhr?
+      partial = view_context.render partial: "ajax_form", layout: false, locals: { advancement: @advancement, rank: @rank }
+
+      render json: {
+        html: partial,
+        id: params[:id]
+      }
+    end
   end
 
   def create
