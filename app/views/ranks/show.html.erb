@@ -29,13 +29,13 @@
         </thead>
         <tbody>
           <% @rank.requirements.each do |requirement| %>
-          <tr>
+          <tr class="rank-row">
             <td><%= requirement.number %></td>
             <td><%= requirement.description %></td>
             <% if requirement.completed == nil %>
-            <td class="text-center"><%= link_to '<span class="glyphicon glyphicon-unchecked"></span>'.html_safe, edit_advancement_rank_requirement_path(@advancement, @rank, requirement) %></td>
+            <td class="text-center req-comp-edit"><%= link_to '<span class="glyphicon glyphicon-unchecked"></span>'.html_safe, edit_advancement_rank_requirement_path(@advancement, @rank, requirement) %></td>
             <% else %>
-            <td class="text-center"><span class="glyphicon glyphicon-ok-circle"></span></td>
+            <td class="text-center req-comp-edit"><span class="status glyphicon glyphicon-ok-circle"></span></td>
             <% end %>
           </tr>
             <% requirement.subrequirements.each do |subrequirement| %>
