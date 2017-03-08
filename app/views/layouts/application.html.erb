@@ -19,6 +19,8 @@
       <div class="row">
         <ul class="nav navbar-nav">
           <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Troop", troop_page_path %></li>
+          <li><%= link_to "Patrol", patrol_page_path %></li>
           <li><%= link_to "Advancements", advancements_path %></li>
         </ul>
         <ul class="nav navbar-nav pull-right">
@@ -34,8 +36,6 @@
     </div>
     <div class="container-fluid">
       <%= yield %>
-
     </div>
-
   </body>
 </html>

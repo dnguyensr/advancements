@@ -4,9 +4,12 @@ Rails.application.routes.draw do
       resources :requirements
     end
   end
-  # get 'users' => 'users#index'
-  # get 'users/:id' => 'users#show'
   devise_for :users
+  get 'users' => 'users#index'
+  get 'users/:id' => 'users#show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: "home#index"
+  PagesController.action_methods.each do |action|
+    get "/#{action}", to: "pages##{action}", as: "#{action}_page"
+  end
+  root 'pages#index'
 end
