@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :advancements do
     resources :ranks do
-      resources :requirements
+      resources :requirements, only: [:edit, :update, :create]
     end
   end
   devise_for :users

@@ -1,16 +1,16 @@
 class RequirementsController < ApplicationController
-  before_action :set_requirement, only: [:show, :edit, :update, :destroy]
+  before_action :set_requirement, only: [:edit, :update, :destroy]
 
-  def index
-    @requirements = Requirement.all
-  end
+  # def index
+  #   @requirements = Requirement.all
+  # end
 
-  def show
-  end
+  # def show
+  # end
 
-  def new
-    @requirement = Requirement.new
-  end
+  # def new
+  #   @requirement = Requirement.new
+  # end
 
   def edit
     @advancement = Advancement.find(params[:advancement_id])
@@ -44,13 +44,13 @@ class RequirementsController < ApplicationController
     end
   end
 
-  def destroy
-    @requirement.destroy
-    respond_to do |format|
-      format.html { redirect_to requirements_url, notice: 'Requirement was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @requirement.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to requirements_url, notice: 'Requirement was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     def set_requirement

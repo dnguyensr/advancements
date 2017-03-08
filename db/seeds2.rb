@@ -1,7 +1,6 @@
-User.delete_all
 scout = User.create(email: "boy@scout.com", password: "password", first_name: "Bob", last_name: "Billy")
-scout1 = User.create(email: "a@a.com", password: "password", first_name: "Billie", last_name: "Jean")
-scout2 = User.create(email: "b@b.com", password: "password", first_name: "Bob", last_name: "Ross")
+scout1 = User.create(email: "a@a.com", password: "password", first_name: "Numero", last_name: "Dos")
+scout2 = User.create(email: "a@a.com", password: "password", first_name: "Numeral", last_name: "III")
 
 advancement = Advancement.create(user_id: scout.id)
 
