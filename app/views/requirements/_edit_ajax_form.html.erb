@@ -1,0 +1,29 @@
+<td>
+  <%= requirement.number %>
+</td>
+<td>
+<%= form_for([@advancement, rank, requirement]) do |f| %>
+  <% if requirement.errors.any? %>
+    <span id="error_explanation">
+      <h2><%= pluralize(requirement.errors.count, "error") %> prohibited this requirement from being saved:</h2>
+
+      <ul>
+      <% requirement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </span>
+  <% end %>
+  <span>
+    <%= f.label :completed %>
+    <%= f.date_select :completed %>
+  </span>
+  <span>
+    <%= f.submit "Save", class: "btn btn-sm btn-success save-req-date" %>
+  </span>
+<% end %>
+</td>
+<td>
+
+  <button class="btn btn-sm btn-danger cancel-req-date">Cancel</button>
+</td>

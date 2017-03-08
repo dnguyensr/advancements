@@ -15,6 +15,17 @@ class RequirementsController < ApplicationController
   def edit
     @advancement = Advancement.find(params[:advancement_id])
     @rank = Rank.find(params[:rank_id])
+    @requirement = Requirement.find(params[:id])
+    partial = view_context.render partial: "edit_ajax_form", layout: false, locals: {advancement: @advancement, rank: @rank, requirement: @requirement}
+    respond_to do |format|
+      format.json {
+        render json: {
+          html: partial,
+          id: params[:id]
+        }
+      }
+      format.html {}
+    end
   end
 
   def create
@@ -33,13 +44,21 @@ class RequirementsController < ApplicationController
 
   def update
     @advancement = Advancement.find(params[:advancement_id])
+    @requirement = Requirement.find(params[:id])
     respond_to do |format|
       if @requirement.update(requirement_params)
+        format.json { render json: {
+            # number: @advancement.number,
+            # description: @advancement.description,
+            completed: @advancement.completed,
+            # rank_id: params[:rank_id],
+            # id: params[:id]
+          }
+        }
         format.html { redirect_to advancement_path(@advancement), notice: 'Requirement was successfully updated.' }
-        format.json { render :show, status: :ok, location: @requirement }
       else
-        format.html { render :edit }
         format.json { render json: @requirement.errors, status: :unprocessable_entity }
+        format.html { render :edit }
       end
     end
   end

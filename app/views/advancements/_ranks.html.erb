@@ -7,15 +7,16 @@
 </thead>
 <tbody>
   <% @rank.requirements.each do |requirement| %>
-  <tr>
+  <tr class="rank-row" id="req-row-<%= requirement.id%>">
     <td><%= requirement.number %></td>
     <td><%= requirement.description %></td>
     <% if requirement.completed == nil %>
-    <td class="text-center"><%= link_to '<span class="glyphicon glyphicon-unchecked"></span>'.html_safe, edit_advancement_rank_requirement_path(@advancement, @rank, requirement) %></td>
+    <td class="text-center"><%= link_to '<span class="glyphicon glyphicon-unchecked"></span>'.html_safe, edit_advancement_rank_requirement_path(@advancement, @rank, requirement), {class: "req-date"} %></td>
     <% else %>
     <td class="text-center"><span class="glyphicon glyphicon-ok-circle"></span></td>
     <% end %>
   </tr>
+  <tr class="rank-row hidden" id="req-row-<%= requirement.id%>-form"></tr>
     <% requirement.subrequirements.each do |subrequirement| %>
       <tr>
         <td><%= requirement.number %><%= subrequirement.part %>.</td>
