@@ -4,6 +4,8 @@
 
 html, body {
   height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 body {
   background-image: url(/assets/abigail-keenan-16898.jpg);
@@ -63,15 +65,15 @@ body {
 
 /* Customizable placeholders below */
 
-#main > .container {
-  height: 98%;
-  min-height: 98%;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
 
 #nav {
   margin-top: 1em;
+}
+
+#main {
+  min-height: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 #footer {
@@ -79,11 +81,12 @@ body {
 }
 
 #nav,
-#main > .container,
+#main,
 #footer {
   background-color: rgb(255, 255, 255);
   background-color: rgba(255, 255, 255, 0.8);
 }
+
 
 /*body {
     font-family: sans-serif;
