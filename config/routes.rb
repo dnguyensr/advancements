@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :advancements do
     resources :ranks do
       resources :requirements
@@ -7,6 +8,5 @@ Rails.application.routes.draw do
   # get 'users' => 'users#index'
   # get 'users/:id' => 'users#show'
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: "home#index"
+root to: "home#index"
 end
