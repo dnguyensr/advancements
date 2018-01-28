@@ -38,7 +38,7 @@ RSpec.describe AdvancementsController, type: :controller do
     before { @user2 = User.create(email: "boy2@scout.com", password: "password", first_name: "Boy2", last_name: "Scout", id: 3) }
     before { login_with(@user2) }
 
-    before { post :create, params: { advancement: FactoryGirl.attributes_for(:advancement) } }
+    before { post :create, params: { advancement: FactoryBot.attributes_for(:advancement) } }
 
     it { should respond_with(302) }
     # it { should redirect_to(advancements_path)}
